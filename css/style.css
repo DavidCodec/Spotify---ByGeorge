@@ -233,6 +233,10 @@ table {
     border-radius: 5rem;
 }
 
+.container__logins a:hover {
+    border: 1px solid #ececec;
+}
+
 /* .container__logins a:last-of-type {
     margin: 0;
 } */
@@ -277,6 +281,11 @@ table {
     border: 1px solid #7C7C7C;
     border-radius: 0.5rem;
     padding: 1.2rem;
+    transition: 0.1s ease;
+}
+
+.container__form--input:hover {
+    border: 1px solid #ececec;
 }
 
 .container__form--submit {
@@ -287,6 +296,12 @@ table {
     padding: 1rem 0;
     border-radius: 5rem;
     margin: 2rem 0 4rem 0;
+    cursor: pointer;
+}
+
+.container__form--submit:hover {
+    background-color: #3af87d;
+    scale: 1.04;
 }
 
 .container__help {
@@ -301,6 +316,10 @@ table {
 
 .container__help--a {
     text-decoration: underline;
+}
+
+.container__help--a:hover {
+    color: #1ED760;
 }
 
 .footer {
