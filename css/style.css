@@ -1,0 +1,316 @@
+/* ===== Reset y Normalización ===== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    /* Hereda del html */
+}
+
+html {
+    font-size: 62.5%;
+    /* Esto es el hack para box size (aunque le pongas padding el tamaño siempre será el que le pongas) */
+    box-sizing: border-box;
+    /* scroll-snap-type: y mandatory; */
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background: linear-gradient(to bottom, rgb(42, 42, 42) 5%, rgb(0, 0, 0) 99%);
+    font-size: 16px;
+    /* 1rem = 10px */
+    min-height: 100vh;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* ===== Eliminar estilos por defecto de listas ===== */
+ul,
+ol {
+    list-style: none;
+}
+
+/* ===== Elementos sin fuente heredan la fuente del body ===== */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* ===== Eliminar animaciones para personas que las prefieren reducidas ===== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===== Tipografía base ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+/* ===== Imágenes responsivas ===== */
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== Formularios ===== */
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+    padding: 0;
+    line-height: inherit;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== Tablas ===== */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ===== Utilidades globales ===== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ===== Variables CSS ===== */
+:root {
+    /* Colores base */
+    --color-primary: #121212;
+    --color-secondary: #2ecc71;
+    --color-accent: #e74c3c;
+    --color-dark: #2c3e50;
+    --color-light: #ecf0f1;
+
+    /* ===== Escala de grises ===== */
+    --color-gray-100: #f8f9fa;
+    --color-gray-200: #e9ecef;
+    --color-gray-300: #dee2e6;
+    --color-gray-400: #ced4da;
+    --color-gray-500: #adb5bd;
+    --color-gray-600: #6c757d;
+    --color-gray-700: #495057;
+    --color-gray-800: #343a40;
+    --color-gray-900: #212529;
+
+    /* ===== Espaciados ===== */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-xxl: 3rem;
+
+    /* ===== Tipografía ===== */
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-xxl: 1.5rem;
+    --text-xxxl: 2rem;
+
+    /* ===== Bordes ===== */
+    --radius-sm: 0.125rem;
+    --radius-md: 0.25rem;
+    --radius-lg: 0.5rem;
+    --radius-full: 9999px;
+
+    /* ===== Sombras ===== */
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+    /* ===== Transiciones ===== */
+    --transition-fast: 150ms;
+    --transition-normal: 300ms;
+    --transition-slow: 500ms;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(19, 19, 19) 0%, rgb(18, 18, 18) 100%);
+    color: white;
+    font-weight: normal;
+    width: 65rem;
+    margin: 3.8rem auto;
+    padding: 0 0 6.4rem 0;
+    width: 54%;
+    border-radius: 0.8rem;
+}
+
+.container__logo {
+    margin-top: 3.2rem;
+    margin-bottom: 1rem;
+}
+
+.container__titulo {
+    margin-top: 0;
+    margin-bottom: 2.8rem;
+}
+
+.logo__svg {
+    width: 3.6rem;
+    height: 3.6rem;
+}
+
+/* .container__logins {} */
+
+.container__logins a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 0.7rem 3.1rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid #7C7C7C;
+    border-radius: 5rem;
+}
+
+/* .container__logins a:last-of-type {
+    margin: 0;
+} */
+
+.logins__svg {
+    flex-shrink: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: block;
+}
+
+.logins__text {
+    font-weight: bold;
+    margin: 0.5rem 3.8rem;
+    font-size: var(--text-xxl);
+    display: block;
+    text-align: center;
+}
+
+.bar {
+    height: 0.1px;
+    width: 80%;
+    background-color: #292929;
+    margin: 3.2rem 0;
+}
+
+/* ===== FORMULARIO ===== */
+
+.container__form {
+    display: flex;
+    flex-direction: column;
+    width: 32.4rem;
+    margin: 0 auto;
+}
+
+.container__form--titulo {
+    font-size: 1.4rem;
+}
+
+.container__form--input {
+    background-color: transparent;
+    border: 1px solid #7C7C7C;
+    border-radius: 0.5rem;
+    padding: 1.2rem;
+}
+
+.container__form--submit {
+    font-weight: bold;
+    color: #0d0e0f;
+    background-color: #1ED760;
+    border: 0;
+    padding: 1rem 0;
+    border-radius: 5rem;
+    margin: 2rem 0 4rem 0;
+}
+
+.container__help {
+    display: flex;
+    gap: 1rem;
+}
+
+.container__help--p {
+    margin: 0;
+    color: #B3B3B3;
+}
+
+.container__help--a {
+    text-decoration: underline;
+}
+
+.footer {
+    padding: 3rem 0;
+    background-color: #121212;
+}
+
+.footer__text {
+    margin: 0;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #B3B3B3;
+}
+
+.footer__text--a {
+    text-decoration: underline;
+}
