@@ -323,7 +323,7 @@ table {
 }
 
 .footer {
-    padding: 3rem 0;
+    padding: 3.2rem;
     background-color: #121212;
 }
 
@@ -460,11 +460,6 @@ table {
 
     .container__help--a {
         text-decoration: underline;
-    }
-
-    .footer {
-        padding: 3rem 0;
-        background-color: #121212;
     }
 
     .footer__text {
